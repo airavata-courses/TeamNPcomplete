@@ -1,0 +1,16 @@
+language: java
+branches:
+  only:
+    - milestone-1
+    - master
+notifications:
+  email:
+    - asampath@umail.iu.edu
+    - soachar@umail.iu.edu
+    - kgundlup@umail.iu.edu
+    - pbheemag@umail.iu.edu
+jdk:
+  - oraclejdk8
+sudo: false
+install: true
+script: cd "SG_MICROSERVICE_STORMDETECTOR" && mvn clean install -DskipTests=true
