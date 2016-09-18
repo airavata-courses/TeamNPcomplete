@@ -17,7 +17,7 @@ public class StromDetection {
 	@Produces("application/xml")
 	public String generateKML() throws ParseException {
 		 
-		String dateString ="2015-03-03";
+		String dateString ="2015-06-06";
 		String locationCode ="KABX"; 
 		Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
 		//System.out.println(date);
