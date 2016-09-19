@@ -36,11 +36,11 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
     secret_access_key: $AWS_SECRET_KEY
     bucket: teamnpcomplete
-    #key: SGA_Apex_Application.zip
+    key: SGA_teamnpcomplete.zip
     #bundle_type: zip
     application: TeamNpComplete
     deployment_group: TeamNpComplete
-    region: us-west-2
+    # region: us-west-2
     on:
       branch: milestone-1-kedar
 
