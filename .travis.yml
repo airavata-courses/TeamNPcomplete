@@ -40,7 +40,7 @@ deploy:
     #bundle_type: zip
     application: TeamNpComplete
     deployment_group: TeamNpComplete
-    # region: us-west-2
+    region: us-west-2
     on:
       branch: milestone-1-kedar
 
