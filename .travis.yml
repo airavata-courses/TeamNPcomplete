@@ -21,22 +21,29 @@ before_script:
 
 script: nosetests
 
+before_deploy:
+  - cd ..
+  - zip -r SGA_NPComplete_Application.zip FlaskModule || true
+  - mkdir -p "dpl_cd_upload"
+  - mv SGA_NPComplete_Application.zip dpl_cd_upload/SGA_Apex_Application.zip || true
+
 deploy:
-  # - provider: s3
-  #   access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
-  #   secret_access_key: $AWS_SECRET_KEY
-  #   bucket: teamnpcomplete
-  #   #region: us-west-2
-  #   skip_cleanup: true
-  #   #acl: public_read
-  #   #detect_encoding: true
-  #   on:
-  #     branch: milestone-1-kedar
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: teamnpcomplete
+    #region: us-west-2
+    skip_cleanup: true
+    #acl: public_read
+    #detect_encoding: true
+    on:
+      branch: milestone-1-kedar
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
     secret_access_key: $AWS_SECRET_KEY
     bucket: teamnpcomplete
-    key: SGA_teamnpcomplete.zip
+    key: SGA_NPComplete_Application.zip
     #bundle_type: zip
     application: TeamNpComplete
     deployment_group: TeamNpComplete
