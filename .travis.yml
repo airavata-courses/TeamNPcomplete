@@ -11,8 +11,8 @@ install: true
 script: 
   - sudo pip install virtualenv
   - cd FlaskModule
-  - virtualvenv venv
-  - . vnev/bin/activate
+  - virtualenv venv
+  - . venv/bin/activate
   - pip install Flask
   - export FLASK_APP=hello.py
   - flask run 
