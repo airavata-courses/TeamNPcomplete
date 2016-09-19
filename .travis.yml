@@ -44,7 +44,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
     bucket: teamnpcomplete
     key: SGA_NPComplete_Application.zip
-    #bundle_type: zip
+    bundle_type: zip
     application: TeamNpComplete
     deployment_group: TeamNpComplete
     region: us-west-2
