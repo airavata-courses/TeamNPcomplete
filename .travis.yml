@@ -1,18 +1,51 @@
 language: python
+
+python: 
+  - "2.7"
+
 branches:
   only:
     - milestone-1-kedar
-notifications:
-  email:
-    - kgundlup@umail.iu.edu
 
 sudo: false
-install:
+
+install: true
+
+before_script:
   - pip install virtualenv
   - cd FlaskModule
   - virtualenv venv
   - . venv/bin/activate
   - pip install Flask
-script: 
-  - export FLASK_APP=hello.py
-  - flask run --host=0.0.0.0 --port=65000
+
+script: nosetests
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: teamnpcomplete
+    region: us-west-2
+    skip_cleanup: true
+    #acl: public_read
+    #detect_encoding: true
+    on:
+      branch: milestone-1-kedar
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: teamnpcomplete
+    #key: SGA_Apex_Application.zip
+    #bundle_type: zip
+    application: TeamNpComplete
+    deployment_group: TeamNpComplete
+    region: us-west-2
+    on:
+      branch: milestone-1-kedar
+
+after_deploy:
+  - echo "Deployment done"
+
+notifications:
+  email:
+    - kgundlup@umail.iu.edu
