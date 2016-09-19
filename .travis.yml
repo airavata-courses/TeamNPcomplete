@@ -16,6 +16,7 @@ before_script:
   - cd FlaskModule
   - virtualenv venv
   - . venv/bin/activate
+  - pip install nose
   - pip install Flask
 
 script: nosetests
