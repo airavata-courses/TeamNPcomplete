@@ -15,4 +15,4 @@ install:
   - pip install Flask
 script: 
   - export FLASK_APP=hello.py
-  - flask run --host=0.0.0.0
+  - flask run --host=0.0.0.0 --port=65000

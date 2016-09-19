@@ -1,10 +1,15 @@
-from flask import Flask
+from flask import Flask, jsonify
+
+
 app = Flask(__name__)
 
-@app.route('/forecast_trigger')
-def fore_cast_trigger():
-    print __name__
-    return 'Hello World'
+@app.route('/forecast_trigger/json')
+def forecast_trigger():
+  print __name__
+  parsed_json = {'result':'yes'}
+  # print parsed_json
+  return jsonify(parsed_json)
+
 
 # if __name__ == '__main__':
 #   app.run(
