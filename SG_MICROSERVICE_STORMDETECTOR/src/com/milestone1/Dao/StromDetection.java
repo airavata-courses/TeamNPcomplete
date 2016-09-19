@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import com.milestone1.Service.StormDetectionService;
 
@@ -25,10 +26,11 @@ public class StromDetection {
 		String filevalue ="http://noaa-nexrad-level2.s3.amazonaws.com/2015/03/03/KABX/KABX20150303_001050_V06.gz";
 		
  
-		String result = "@Produces(\"application/xml\") \n\n"
-				+ "Output:\n\n Example KML,we can add tags here\n\n" 
-				+ "\n\n filename is" +filevalue+ "use this for download \n\n";
-		return "<exampleKmlRoot>" + "<year>" +  date + "</year>" + "<location>" +  locationCode + "</location>"+ "<filename>" + result + "</filename>" + "</exampleKmlRoot>";
+		String result = "@Produces(\"application/xml\")" + "\n\n"
+				+ "Output:\n\n Example KML, we can add tags here " + "\n\n" 
+				+ "\n\n URL for file is " +filevalue+ "\n\n" 
+				+ " use this for download \n\n";
+		return "<KMLResponseFromStormDetector>" + "<year>" +  date + "</year>" + "<location>" +  locationCode + "</location>"+ "<filename>" + result + "</filename>" + "</KMLResponseFromStormDetector>";
 	}
 }
 	

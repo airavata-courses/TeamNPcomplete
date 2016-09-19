@@ -15,7 +15,7 @@ import com.milestone1.Service.*;
 
 
 @Path("/dataingester")
-@Produces(MediaType.TEXT_PLAIN)
+@Produces(MediaType.TEXT_XML)
 public class DataIngester {
 	private DataIngesterService DIservice;
 
