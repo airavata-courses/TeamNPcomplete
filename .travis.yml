@@ -1,16 +1,17 @@
-language: java
+language: python
 branches:
   only:
-    - milestone-1
-    - master
+    - milestone-1-kedar
 notifications:
   email:
-    - asampath@umail.iu.edu
-    - soachar@umail.iu.edu
     - kgundlup@umail.iu.edu
-    - pbheemag@umail.iu.edu
-jdk:
-  - oraclejdk8
+
 sudo: false
 install: true
-script: cd "SG_MICROSERVICE_STORMDETECTOR" && mvn clean install -DskipTests=true
+script: 
+  - cd FlaskModule
+  - virtualvenv venv
+  - . vnev/bin/activate
+  - pip install Flask
+  - export FLASK_APP=hello.py
+  - flask run 
