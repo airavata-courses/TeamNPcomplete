@@ -7,12 +7,12 @@ notifications:
     - kgundlup@umail.iu.edu
 
 sudo: false
-install: true
-script: 
-  - sudo pip install virtualenv
+install:
+  - pip install virtualenv
   - cd FlaskModule
   - virtualenv venv
   - . venv/bin/activate
   - pip install Flask
+script: 
   - export FLASK_APP=hello.py
-  - flask run 
+  - flask run --host=0.0.0.0

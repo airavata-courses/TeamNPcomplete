@@ -1,9 +1,13 @@
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
+@app.route('/forecast_trigger')
+def fore_cast_trigger():
     print __name__
-    return 'Abhi turns 26 in 2 weeks. He will be old'
+    return 'Hello World'
 
-hello_world()
+# if __name__ == '__main__':
+#   app.run(
+#       host="127.0.0.1",
+#       port=int(5000),
+#   )
