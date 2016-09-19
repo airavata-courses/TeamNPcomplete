@@ -9,6 +9,7 @@ notifications:
 sudo: false
 install: true
 script: 
+  - sudo pip install virtualenv
   - cd FlaskModule
   - virtualvenv venv
   - . vnev/bin/activate
