@@ -34,7 +34,7 @@ deploy:
     bucket: teamnpcomplete
     local_dir: dpl_cd_upload
     region: us-west-2
-    #skip_cleanup: false
+    skip_cleanup: false
     acl: public_read
     detect_encoding: true
     on:
