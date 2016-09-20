@@ -5,6 +5,7 @@ package com.milestone1.Dao;
 import javax.ws.rs.BeanParam;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
@@ -15,11 +16,13 @@ import com.milestone1.Service.*;
 
 
 @Path("/dataingester")
-@Produces(MediaType.TEXT_XML)
+//@Produces(MediaType.TEXT_XML)
+@Produces("application/xml")
 public class DataIngester {
 	private DataIngesterService DIservice;
 
 	@GET
+	//@POST
 	public String returnURL(@BeanParam DataIngesterParamHolder dataingesterparam) {
 		DIservice = new DataIngesterService();
 		return DIservice.returnBuiltURL(dataingesterparam.getDate(), dataingesterparam.getTime(),
