@@ -54,6 +54,15 @@ deploy:
 
 after_deploy:
   - echo "Deployment done"
+  - pip install virtualenv
+  - cd FlaskModule
+  - virtualenv venv
+  - . venv/bin/activate
+  - pip install nose
+  - pip install Flask
+  - export FASK_APP=hello.py
+  - flask run 2>&1 &
+
 
 notifications:
   email:
