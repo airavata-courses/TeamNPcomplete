@@ -15,7 +15,7 @@ def forecast_decision():
 
   if(random_no%2==0):
 	  parsed_json = {'result':'yes'}
-	  connection = httplib.HTTPConnection("127.0.0.1:5000");
+	  connection = httplib.HTTPConnection("http://127.0.0.1:64000");
 	  connection.request("GET", "/forecast/json")
 	  result = connection.getresponse()
 	  response_json = ast.literal_eval(result.read())
@@ -23,10 +23,3 @@ def forecast_decision():
 	  return jsonify(response_json)
   else:
 	  return jsonify({'result':'no'})
-
-
-# if __name__ == '__main__':
-#   app.run(
-#       host="127.0.0.1",
-#       port=int(5000),
-#   )
