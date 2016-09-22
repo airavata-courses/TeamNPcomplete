@@ -23,7 +23,7 @@ script: nosetests
 
 before_deploy:
   - cd ..
-  - zip -r SGA_NPComplete_Application.zip ForecastDecision || true
+  - zip -r SGA_NPComplete_Application.zip ForecastDecision appspec.yml || true
   - mkdir -p "dpl_cd_upload"
   - mv SGA_NPComplete_Application.zip dpl_cd_upload/SGA_NPComplete_Application.zip || true
 
