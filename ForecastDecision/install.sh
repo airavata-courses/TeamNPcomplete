@@ -6,5 +6,5 @@ virtualenv venv
 pip install Flask
 echo 'Running Flask Server'
 export FLASK_APP=forecast_decision.py
-flask run --port=65000 2>&1 &
+flask run --host=0.0.0.0 --port=65000 2>&1 &
 sleep 60
