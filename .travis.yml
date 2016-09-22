@@ -23,7 +23,7 @@ script: nosetests
 
 before_deploy:
   - cd ..
-  - zip -r SGA_NPComplete_Application.zip FlaskModule || true
+  - zip -r SGA_NPComplete_Application.zip ForecastDecision || true
   - mkdir -p "dpl_cd_upload"
   - mv SGA_NPComplete_Application.zip dpl_cd_upload/SGA_NPComplete_Application.zip || true
 
@@ -51,17 +51,6 @@ deploy:
     region: us-west-2
     on:
       branch: milestone-1-kedar
-
-after_deploy:
-  - echo "Deployment done"
-  - pip install virtualenv
-  - cd FlaskModule
-  - virtualenv venv
-  - . venv/bin/activate
-  - pip install nose
-  - pip install Flask
-  - export FASK_APP=hello.py
-  - flask run 2>&1 &
 
 
 notifications:

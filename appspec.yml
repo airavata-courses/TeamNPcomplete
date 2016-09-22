@@ -5,6 +5,6 @@ files:
     destination: /home/ec2-user
 hooks:
   ApplicationStart:
-    - location: FlaskModule/install.sh
+    - location: ForecastDecision/install.sh
       timeout: 3600
       runas: ec2-user
