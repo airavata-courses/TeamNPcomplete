@@ -5,7 +5,7 @@ python:
 
 branches:
   only:
-    - milestone-1-kedar
+    - milestone-1-kedar-deploy
 
 sudo: false
 
@@ -23,7 +23,7 @@ script: nosetests
 
 before_deploy:
   - cd ..
-  - zip -r SGA_NPComplete_Application.zip ForecastDecision appspec.yml || true
+  - zip -r SGA_NPComplete_Application.zip ForecastDecision Forecast scripts appspec.yml || true
   - mkdir -p "dpl_cd_upload"
   - mv SGA_NPComplete_Application.zip dpl_cd_upload/SGA_NPComplete_Application.zip || true
 
@@ -38,7 +38,7 @@ deploy:
     acl: public_read
     detect_encoding: true
     on:
-      branch: milestone-1-kedar
+      branch: milestone-1-kedar-deploy
 
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
@@ -50,7 +50,7 @@ deploy:
     deployment_group: TeamNPComplete
     region: us-west-2
     on:
-      branch: milestone-1-kedar
+      branch: milestone-1-kedar-deploy
 
 
 notifications:
