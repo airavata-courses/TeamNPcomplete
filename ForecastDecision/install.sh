@@ -1,4 +1,4 @@
-cd '/home/ec2-user/SGA_NPComplete_application/ForecastDecision' >> /var/log/sga-npcomplete-flask-install.log
+cd '/home/ec2-user/ForecastDecision' >> /var/log/sga-npcomplete-flask-install.log
 echo 'Activating virtualenv'
 pip install virtualenv >> /var/log/sga-npcomplete-flask-install.log
 virtualenv venv >> /var/log/sga-npcomplete-flask-install.log
