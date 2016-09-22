@@ -46,8 +46,8 @@ deploy:
     bucket: sga-teamnpcomplete
     key: SGA_NPComplete_Application.zip
     bundle_type: zip
-    application: TeamNpComplete
-    deployment_group: TeamNpComplete
+    application: TeamNPComplete
+    deployment_group: TeamNPComplete
     region: us-west-2
     on:
       branch: milestone-1-kedar
