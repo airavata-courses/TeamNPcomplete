@@ -13,7 +13,7 @@ install: true
 
 before_script:
   - pip install virtualenv
-  - cd FlaskModule
+  - cd ForecastDecision
   - virtualenv venv
   - . venv/bin/activate
   - pip install nose
