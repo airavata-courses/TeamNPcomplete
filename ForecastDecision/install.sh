@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 #echo 'starting installation process' >> /var/log/sga-npcomplete-flask-install.log
-cd '/home/ec2-user/ForecastDecision' >> /var/log/sga-npcomplete-flask-install.log
-#echo 'Activating virtualenv' >> /var/log/sga-npcomplete-flask-install.log
-pip install virtualenv >> /var/log/sga-npcomplete-flask-install.log
+cd '/home/ec2-user/ForecastDecision'
+echo 'Activating virtualenv'
+pip install virtualenv 
 virtualenv venv >> /var/log/sga-npcomplete-flask-install.log
 . venv/bin/activate >> /var/log/sga-npcomplete-flask-install.log
 pip install Flask >> /var/log/sga-npcomplete-flask-install.log
