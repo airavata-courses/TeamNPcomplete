@@ -9,7 +9,7 @@ branches:
 
 sudo: false
 
-#install: true
+install: true
 
 # before_script:
 #   - pip install virtualenv
