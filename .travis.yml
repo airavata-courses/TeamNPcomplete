@@ -9,17 +9,17 @@ branches:
 
 sudo: false
 
-install: true
+#install: true
 
-before_script:
-  - pip install virtualenv
-  - cd ForecastDecision
-  - virtualenv venv
-  - . venv/bin/activate
-  - pip install nose
-  - pip install Flask
+# before_script:
+#   - pip install virtualenv
+#   - cd ForecastDecision
+#   - virtualenv venv
+#   - . venv/bin/activate
+#   - pip install nose
+#   - pip install Flask
 
-script: nosetests
+# script: nosetests
 
 before_deploy:
   - cd ..
