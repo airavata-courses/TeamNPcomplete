@@ -17,7 +17,7 @@ script: cd "SG_MICROSERVICE_STORMDETECTOR" && mvn clean install -DskipTests=true
 
 before_deploy:
   - cd ..
-  - zip -r SGA_NPComplete_Java.zip SG_MICROSERVICE_STORMDETECTOR SG_MICROSERVICE_DATAINGESTOR SG_MICROSERVICE_STROMCLUSTERING scripts appspec.yml || true
+  - zip -r SGA_NPComplete_Java.zip SG_MICROSERVICE_STORMDETECTOR SG_MICROSERVICE_DATAINGESTOR SG_MICROSERVICE_STROMCLUSTERING SG_MICROSERVICE_REGISTRY scripts appspec.yml || true
   - mkdir -p "dpl_java_upload"
   - mv SGA_NPComplete_Java.zip dpl_java_upload/SGA_NPComplete_Java.zip || true
 
