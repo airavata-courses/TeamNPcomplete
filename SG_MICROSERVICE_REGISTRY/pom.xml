@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>SG_MICROSERVICE_STROMCLUSTERING</groupId>
-  <artifactId>SG_MICROSERVICE_STROMCLUSTERING</artifactId>
+  <groupId>SG_MICROSERVICE_REGISTRY</groupId>
+  <artifactId>SG_MICROSERVICE_REGISTRY</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
   <build>
     <sourceDirectory>src</sourceDirectory>
-<finalName>SG_MICROSERVICE_STROMCLUSTERING</finalName>
+      <finalName>SG_MICROSERVICE_REGISTRY</finalName>
     <plugins>
       
       <plugin>
@@ -32,11 +32,6 @@
   
   <dependencyManagement>
         <dependencies>
-        	<dependency>
-    			<groupId>org.apache.httpcomponents</groupId>
-    			<artifactId>httpclient</artifactId>
-    			<version>4.5</version>
-			</dependency>
             <dependency>
                 <groupId>org.glassfish.jersey</groupId>
                 <artifactId>jersey-bom</artifactId>
@@ -44,6 +39,29 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>javax.ws.rs</groupId>
+                <artifactId>javax.ws.rs-api</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.39</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.json</groupId>
+                <artifactId>javax.json-api</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.json/json -->
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>20090211</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
@@ -64,19 +82,17 @@
 			<artifactId>json</artifactId>
 			<version>20140107</version>
 		</dependency>
-		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>	
-			<artifactId>json-simple</artifactId>
-			<version>1.1</version>
-  		</dependency>
-		
-		<dependency>
-    		<groupId>org.glassfish.jersey.core</groupId>
-    		<artifactId>jersey-client</artifactId>
-    		<version>2.16</version>
-		</dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.35</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>2.16</version>
+        </dependency>
     </dependencies>
-    
     <properties>
         <jersey.version>2.16</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
