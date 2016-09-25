@@ -5,6 +5,7 @@ echo 'Activating virtualenv for ForecastDecision Microservice' >> /var/log/sga-n
 pip install virtualenv >> /var/log/sga-npcomplete-forecast-decision-install.log
 virtualenv venv >> /var/log/sga-npcomplete-forecast-decision-install.log
 . venv/bin/activate >> /var/log/sga-npcomplete-forecast-decision-install.log
+pip install requests
 pip install Flask >> /var/log/sga-npcomplete-forecast-decision-install.log
 #echo 'Running Flask Server' >> /var/log/sga-npcomplete-flask-install.log
 export FLASK_APP=forecast_decision.py
@@ -15,6 +16,7 @@ echo 'Activating virtualenv for Forecast Microservice' >> /var/log/sga-npcomplet
 pip install virtualenv >> /var/log/sga-npcomplete-forecast-install.log
 virtualenv venv >> /var/log/sga-npcomplete-forecast-install.log
 . venv/bin/activate >> /var/log/sga-npcomplete-forecast-install.log
+pip install requests
 pip install Flask >> /var/log/sga-npcomplete-forecast-install.log
 #echo 'Running Flask Server' >> /var/log/sga-npcomplete-flask-install.log
 export FLASK_APP=forecast.py

@@ -1,11 +1,29 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+import httplib
+import ast
+import requests
+import json
 
 
 app = Flask(__name__)
 
-@app.route('/forecast/json')
+@app.route('/forecast/json', methods = ['POST'])
 def forecast():
-  print __name__
+  result = ast.literal_eval(request.data)
+  result["serviceId"] = "Forecast"
+  kml_contents = ""
+
+  headers = {'Content-Type': 'application/json'}
+
+
   parsed_json = {'result':'forecast_ran'}
-  # print parsed_json
+
+
+  kml_file = open("KML_Samples.kml")
+
+
+  result["text"] = "KML generated"	
+  print result
+  r = requests.post("http://ec2-54-69-92-137.us-west-2.compute.amazonaws.com:8080/SG_MICROSERVICE_REGISTRY/gateway/message/saveData", data=json.dumps(result), headers=headers)  
+  print r.status_code
   return jsonify(parsed_json)

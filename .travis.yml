@@ -16,6 +16,7 @@ before_script:
   - cd ForecastDecision
   # - virtualenv venv
   # - . venv/bin/activate
+  - pip install requests
   - pip install nose
   - pip install Flask
 
