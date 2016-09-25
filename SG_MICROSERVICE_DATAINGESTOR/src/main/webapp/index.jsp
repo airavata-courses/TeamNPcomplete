@@ -1,4 +1,3 @@
-
 <!--
 Copyright 2016 JQueryForm.com
 License: http://www.jqueryform.com/license.php

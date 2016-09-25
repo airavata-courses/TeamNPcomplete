@@ -49,7 +49,7 @@ public class StromDetection {
 		Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
 		String filevalue ="http://noaa-nexrad-level2.s3.amazonaws.com/2015/03/03/KABX/KABX20150303_001050_V06.gz";
 		*/
-		System.out.println("data is here");
+		System.out.println("data is here" +data);
 		return Response.status(200).entity(data).build();
 		
 		
