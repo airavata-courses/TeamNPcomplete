@@ -2,15 +2,46 @@ language: java
 branches:
   only:
     - milestone-1
-    - master
-notifications:
-  email:
-    - asampath@umail.iu.edu
-    - soachar@umail.iu.edu
-    - kgundlup@umail.iu.edu
-    - pbheemag@umail.iu.edu
+
+# notifications:
+#   email:
+#     - asampath@umail.iu.edu
+#     - soachar@umail.iu.edu
+#     - kgundlup@umail.iu.edu
+#     - pbheemag@umail.iu.edu
 jdk:
   - oraclejdk8
 sudo: false
 install: true
 script: cd "SG_MICROSERVICE_STORMDETECTOR" && mvn clean install -DskipTests=true
+
+before_deploy:
+  - cd ..
+  - zip -r SGA_NPComplete_Java.zip SG_MICROSERVICE_STORMDETECTOR appspec.yml || true
+  - mkdir -p "dpl_java_upload"
+  - mv SGA_Apex_Application.zip dpl_java_upload/SGA_NPComplete_Java.zip || true
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: sga-teamnpcomplete
+    local_dir: dpl_java_upload
+    region: us-west-2
+    skip_cleanup: true
+    acl: public_read
+    detect_encoding: true
+    on:
+      branch: milestone-1
+
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: sga-teamnpcomplete
+    key: SGA_NPComplete_Java.zip
+    bundle_type: zip
+    application: TeamNPComplete
+    deployment_group: TeamNPComplete
+    region: us-west-2
+    on:
+      branch: milestone-1
