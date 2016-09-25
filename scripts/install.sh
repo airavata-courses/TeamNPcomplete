@@ -9,7 +9,6 @@ cp target/*.war /usr/local/tomcat7/apache-tomcat-7.0.72/webapps/ >> /var/log/tom
 cd  /usr/local/tomcat7/apache-tomcat-7.0.72
 echo 'Installing SG_MICROSERVICE_STROMCLUSTERING' >> /var/log/tomcat.log
 cd '/home/ec2-user/SG_MICROSERVICE_STROMCLUSTERING'
-pwd >> /var/log/tomcat.log
 mvn -e clean install >> /var/log/tomcat.log
 cp target/*.war /usr/local/tomcat7/apache-tomcat-7.0.72/webapps/ >> /var/log/tomcat.log
 cd  /usr/local/tomcat7/apache-tomcat-7.0.72
