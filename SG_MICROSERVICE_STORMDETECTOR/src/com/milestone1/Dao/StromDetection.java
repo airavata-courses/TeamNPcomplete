@@ -12,12 +12,15 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.milestone1.Service.StormDetectionService;
 
 @Path("/StormDetection")
 public class StromDetection {
 	private StormDetectionService stormDetectionService;
-	
+	JsonCreation json=new JsonCreation();
 	@GET
 	//@POST
 	@Path("/get")
@@ -54,5 +57,21 @@ public class StromDetection {
 		
 		
 	}
+	/*@POST
+	@Path("/sendjson")
+	@Consumes("application/json")
+	public Response json(JSONObject obj) throws ParseException, JSONException {
+		 
+		String dateString ="2015-06-06";
+		String locationCode ="KABX"; 
+		Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dateString);
+		String filevalue ="http://noaa-nexrad-level2.s3.amazonaws.com/2015/03/03/KABX/KABX20150303_001050_V06.gz";
+		
+		System.out.println("data is here" +obj.getString("reqId"));
+		return Response.status(200).entity(obj.getString("reqId")).build();
+		
+		
+	}*/
+	
 }
 	
