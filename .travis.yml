@@ -1,7 +1,7 @@
 language: java
 branches:
   only:
-    - milestone-1
+    - milestone-1-deploy-java
 
 # notifications:
 #   email:
@@ -32,7 +32,7 @@ deploy:
     acl: public_read
     detect_encoding: true
     on:
-      branch: milestone-1
+      branch: milestone-1-deploy-java
 
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
@@ -44,4 +44,4 @@ deploy:
     deployment_group: TeamNPComplete
     region: us-west-2
     on:
-      branch: milestone-1
+      branch: milestone-1-deploy-java
