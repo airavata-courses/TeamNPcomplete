@@ -7,7 +7,6 @@
     <artifactId>SG_MICROSERVICE_DATAINGESTOR</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>milestone1</name>
 
     <build>
         <finalName>SG_MICROSERVICE_DATAINGESTOR</finalName>
