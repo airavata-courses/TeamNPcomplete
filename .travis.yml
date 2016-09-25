@@ -19,7 +19,7 @@ before_deploy:
   - cd ..
   - zip -r SGA_NPComplete_Java.zip SG_MICROSERVICE_STORMDETECTOR appspec.yml || true
   - mkdir -p "dpl_java_upload"
-  - mv SGA_Apex_Application.zip dpl_java_upload/SGA_NPComplete_Java.zip || true
+  - mv SGA_NPComplete_Java.zip dpl_java_upload/SGA_NPComplete_Java.zip || true
 
 deploy:
   - provider: s3
