@@ -1,7 +1,8 @@
-echo 'killing existing jetty process if any'
-ps -ef | grep java | grep -v grep | awk '{print $2}' | xargs kill
+echo 'killing existing tomcat process if any'
+cd /usr/local/tomcat7/apache-tomcat-7.0.72
+sudo sh ./bin/shutdown.sh
 sleep 20
-
+export JAVA_HOME=/usr/java/jdk1.8.0_45/jre
 echo 'check if maven is installed'
 mvn --version
 if [ "$?" -ne 0 ]; then

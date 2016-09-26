@@ -7,6 +7,7 @@
   
   <build>
     <sourceDirectory>src</sourceDirectory>
+    <finalName>SG_MICROSERVICE_STROMCLUSTERING</finalName>
     <plugins>
       
       <plugin>
