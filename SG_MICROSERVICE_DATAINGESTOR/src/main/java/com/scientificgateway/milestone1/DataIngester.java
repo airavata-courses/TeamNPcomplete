@@ -30,10 +30,15 @@ public class DataIngester {
 		String url = DIservice.returnResponseFile(dip.getStation(), dip.getDate(), dip.getHours(), dip.getMinutes(),
 				dip.getSeconds());
 		System.out.println("in controller " + ": " + url);
+		DIservice.sendURL(url);
 		return url;
+		
 	}
 	
-	@GET
+	
+	
+	
+	/*@GET
 	//@POST
 	@Path("/get1")
 	@Produces("application/xml")
@@ -53,7 +58,7 @@ public class DataIngester {
 				+ " use this for download \n\n";
 		
 		return "<KMLResponseFromStormDetector>" + "<year>" +  date + "</year>" + "<location>" +  locationCode + "</location>"+ "<filename>" + result + "</filename>" + "</KMLResponseFromStormDetector>";
-	} 
+	} */
 	
 	
 	

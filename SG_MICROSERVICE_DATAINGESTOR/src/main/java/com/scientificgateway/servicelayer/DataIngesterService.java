@@ -5,6 +5,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
+import javax.ws.*;
+
+import org.glassfish.jersey.client.ClientConfig;
+
 import com.scientificgateway.helpers.DownloadGZFile;
 import com.scientificgateway.helpers.UNZIPfile;
 
@@ -58,6 +67,38 @@ public class DataIngesterService {
 			}
 		}*/
 
+	}
+	
+	public String sendURL(String url) {
+		ClientConfig clientConfig = new ClientConfig();
+		//clientConfig.register(MyClientResponseFilter.class);
+		//clientConfig.register(new AnotherClientFilter());
+		 
+		Client client = ClientBuilder.newClient(clientConfig);
+		//client.register(ThirdClientFilter.class);;
+		
+		System.out.println("Client client1 ");
+		//http://ec2-54-69-92-137.us-west-2.compute.amazonaws.com:65000/forecast_decision/json
+		//WebTarget target1 = client1.target("http://localhost:8080/SG_SC").path("gateway").path("StormDetection").path("send");
+		WebTarget target = client.target("http://localhost:8080/SG_MICROSERVICE_STORMDETECTOR/gateway/StormDetection").path("send");
+		//target.register(FilterForExampleCom.class);
+		System.out.println("dataingestor");
+		//target1.queryParam("name1", "value1");
+		//http://localhost:8080/SG_MICROSERVICE_STORMDETECTOR/gateway/StormDetection/get
+		System.out.println("in send url"+url);
+		
+		//Response response = invocationBuilder.get();
+		
+		Response response = target.request().post(Entity.entity(url, "application/xml"),Response.class);
+		System.out.println(response.toString());
+		String responsefrom;
+		responsefrom=target.request().post(Entity.entity(url, "application/xml"),String.class);
+		
+		System.out.println();
+		System.out.println(responsefrom);
+		return url;
+		
+		
 	}
 
 	public List<String> convertMinutesSecondsHoursDays(String hours, String minutes, String seconds, String day,

@@ -42,27 +42,27 @@ public class JsonCreation {
 	      //setObj(obj);
 	      
 	      
-		//ClientConfig config1 = new ClientConfig();
-		// System.out.println("ClientConfig config1 ");
-		//Client client1 = ClientBuilder.newClient(config1);
-		// System.out.println("Client client1 ");
+		ClientConfig config1 = new ClientConfig();
+		System.out.println("ClientConfig config1 ");
+		Client client1 = ClientBuilder.newClient(config1);
+		 System.out.println("Client client1 ");
 		// http://ec2-54-69-92-137.us-west-2.compute.amazonaws.com:65000/forecast_decision/json
-		// WebTarget target1 =
-		// client1.target("http://localhost:8080/SG_SC").path("gateway").path("StormDetection").path("send");
+		//WebTarget target1 =
+		//client1.target("http://localhost:8080/SG_SC").path("gateway").path("StormDetection").path("send");
 		//WebTarget target1 = client1.target("http://ec2-54-69-92-137.us-west-2.compute.amazonaws.com:65000/forecast_decision").path("json");
-		//WebTarget target1 = client1.target("http://10.0.0.215:8080/gateway").path("message").path("saveData");
+		WebTarget target1 = client1.target("http://149.160.149.81:8080/gateway").path("message").path("saveData");
 		//WebTarget target1 = client1.target("http://localhost:8080/SG_MICROSERVICE_STORMDETECTOR").path("gateway").path("StormDetection").path("sendjson");
-		//System.out.println("WebTarget");
+		System.out.println("WebTarget");
 		//// target1.queryParam("name1", "value1");
 
 		//Response response1 = target1.request().post(Entity.entity("hii","application/xml"),Response.class);
-		//Response response1 = target1.request().post(Entity.entity(msg,"application/json"), Response.class);
+		Response response1 = target1.request().post(Entity.entity(msg,"application/json"), Response.class);
 	
-		//String responsefrom;
-		//responsefrom = target1.request().post(Entity.entity(msg,"application/json"), String.class);
-		//System.out.println(response1.toString());
-		//System.out.println();
-		//System.out.println("response is"+responsefrom);
+		String responsefrom;
+		responsefrom = target1.request().post(Entity.entity(msg,"application/json"), String.class);
+		System.out.println(response1.toString());
+		System.out.println();
+		System.out.println("response is"+responsefrom);
 		
 	}
 	

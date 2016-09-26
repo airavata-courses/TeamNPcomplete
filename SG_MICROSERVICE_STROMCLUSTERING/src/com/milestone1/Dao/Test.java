@@ -25,7 +25,7 @@ public class Test{
 		//HTTPget 
 		//HttpGet request=new HttpGet("http://pro.ip-api.com/xml/"+entry.ip+"?key=zTbNOOuTjoBXLZu");
 		
-		ClientConfig config = new ClientConfig();
+		/*ClientConfig config = new ClientConfig();
 		Client client = ClientBuilder.newClient(config);
 		WebTarget target = client.target(UriBuilder.fromUri("http://localhost:8080/SG_MICROSERVICE_STORMDETECTOR").build());
 		//WebTarget target = client.target(UriBuilder.fromUri("http://localhost:8080/SG").build());
@@ -35,12 +35,12 @@ public class Test{
 		System.out.println(response);
 		System.out.println(xmlAnswer);
 		System.out.println();
-		setResponse1(xmlAnswer);
+		setResponse1(xmlAnswer);*/
 		
 		
 		
 		
-		ClientConfig config1 = new ClientConfig();
+		/*ClientConfig config1 = new ClientConfig();
 		System.out.println("ClientConfig config1 ");
 		Client client1 = ClientBuilder.newClient(config1);
 		System.out.println("Client client1 ");
@@ -55,9 +55,9 @@ public class Test{
 		responsefrom=target1.request().post(Entity.entity("hii", "application/xml"),String.class);
 		System.out.println(response1.toString());
 		System.out.println();
-		System.out.println(responsefrom);
+		System.out.println(responsefrom);*/
 		
-		
+		/**************************/
 		
 		/*ClientConfig config2 = new ClientConfig();
 		Client client2 = ClientBuilder.newClient(config2);
