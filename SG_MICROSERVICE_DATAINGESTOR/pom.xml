@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.scientificgateway</groupId>
-    <artifactId>milestone1</artifactId>
+    <artifactId>SG_MICROSERVICE_DATAINGESTOR</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>milestone1</name>
+    <name>SG_MICROSERVICE_DATAINGESTOR</name>
 
     <build>
-        <finalName>milestone1</finalName>
+        <finalName>SG_MICROSERVICE_DATAINGESTOR</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -13,8 +13,8 @@ public class DataIngesterService {
 	public String returnResponseFile(String station, String date, String hours, String minutes, String seconds)
 			throws IOException {
 
-		DownloadGZFile dzip = new DownloadGZFile();
-		UNZIPfile unzip = new UNZIPfile();
+		/*DownloadGZFile dzip = new DownloadGZFile();
+		UNZIPfile unzip = new UNZIPfile();*/
 
 		System.out.println(station);
 		StringTokenizer inputstation = new StringTokenizer(station, "-");
@@ -35,8 +35,10 @@ public class DataIngesterService {
 					+ stationcode + "/" + filename;
 
 			System.out.println(url);
+			return url;
+		}
 
-			String downloadedFile = dzip.downloadFile(url);
+		/*	String downloadedFile = dzip.downloadFile(url);
 			if (downloadedFile.equals("xxx")) {
 				System.out.println("testing other URLs");
 				l = convertMinutesSecondsHoursDays(hours, minutes, seconds, day, month, year);
@@ -54,7 +56,7 @@ public class DataIngesterService {
 				System.out.println("file created");
 				return url;
 			}
-		}
+		}*/
 
 	}
 

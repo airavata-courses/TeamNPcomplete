@@ -20,7 +20,7 @@ import com.milestone1.Service.StormDetectionService;
 @Path("/StormDetection")
 public class StromDetection {
 	private StormDetectionService stormDetectionService;
-	JsonCreation json=new JsonCreation();
+	//JsonCreation json=new JsonCreation();
 	@GET
 	//@POST
 	@Path("/get")
