@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/forecast/json', methods = ['POST'])
+@app.route('/forecast/json', methods = ['POST'])  #test commit
 def forecast():
   result = ast.literal_eval(request.data)
   result["serviceId"] = "Forecast"
@@ -19,7 +19,7 @@ def forecast():
   parsed_json = {'result':'forecast_ran'}
 
 
-  kml_file = open("KML_Samples.kml")
+  #kml_file = open("KML_Samples.kml")
 
 
   result["text"] = "KML generated"	
