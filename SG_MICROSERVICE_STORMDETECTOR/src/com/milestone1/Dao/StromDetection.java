@@ -27,8 +27,7 @@ public class StromDetection {
 	private StormDetectionService stormDetectionService;
 	JsonCreation json = new JsonCreation();
 
-	public String KML = new String(
-			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n"
+	public String KML = new String("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n"
 					+ "  <Placemark>\n" + "    <name>Simple placemark</name>\n"
 					+ "    <description>Attached to the ground. Intelligently places itself \n"
 					+ "       at the height of the underlying terrain.</description>\n" + "    <Point>\n"
