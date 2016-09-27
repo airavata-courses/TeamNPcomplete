@@ -22,8 +22,10 @@ public class DataIngesterService {
 	public String returnResponseFile(String station, String date, String hours, String minutes, String seconds)
 			throws IOException {
 
-		/*DownloadGZFile dzip = new DownloadGZFile();
-		UNZIPfile unzip = new UNZIPfile();*/
+		/*
+		 * DownloadGZFile dzip = new DownloadGZFile(); UNZIPfile unzip = new
+		 * UNZIPfile();
+		 */
 
 		System.out.println(station);
 		StringTokenizer inputstation = new StringTokenizer(station, "-");
@@ -47,58 +49,45 @@ public class DataIngesterService {
 			return url;
 		}
 
-		/*	String downloadedFile = dzip.downloadFile(url);
-			if (downloadedFile.equals("xxx")) {
-				System.out.println("testing other URLs");
-				l = convertMinutesSecondsHoursDays(hours, minutes, seconds, day, month, year);
-				year = l.get(0);
-				month = l.get(1);
-				day = l.get(2);
-				hours = l.get(3);
-				minutes = l.get(4);
-				seconds = l.get(5);
-				continue;
-
-			} else {
-
-				unzip.unzip(downloadedFile, "hello.txt");
-				System.out.println("file created");
-				return url;
-			}
-		}*/
+		/*
+		 * String downloadedFile = dzip.downloadFile(url); if
+		 * (downloadedFile.equals("xxx")) {
+		 * System.out.println("testing other URLs"); l =
+		 * convertMinutesSecondsHoursDays(hours, minutes, seconds, day, month,
+		 * year); year = l.get(0); month = l.get(1); day = l.get(2); hours =
+		 * l.get(3); minutes = l.get(4); seconds = l.get(5); continue;
+		 * 
+		 * } else {
+		 * 
+		 * unzip.unzip(downloadedFile, "hello.txt");
+		 * System.out.println("file created"); return url; } }
+		 */
 
 	}
-	
+
 	public String sendURL(String url) {
 		ClientConfig clientConfig = new ClientConfig();
-		//clientConfig.register(MyClientResponseFilter.class);
-		//clientConfig.register(new AnotherClientFilter());
-		 
+
 		Client client = ClientBuilder.newClient(clientConfig);
-		//client.register(ThirdClientFilter.class);;
-		
-		System.out.println("Client client1 ");
-		//http://ec2-54-69-92-137.us-west-2.compute.amazonaws.com:65000/forecast_decision/json
-		//WebTarget target1 = client1.target("http://localhost:8080/SG_SC").path("gateway").path("StormDetection").path("send");
-		WebTarget target = client.target("http://localhost:8080/SG_MICROSERVICE_STORMDETECTOR/gateway/StormDetection").path("send");
-		//target.register(FilterForExampleCom.class);
-		System.out.println("dataingestor");
-		//target1.queryParam("name1", "value1");
-		//http://localhost:8080/SG_MICROSERVICE_STORMDETECTOR/gateway/StormDetection/get
-		System.out.println("in send url"+url);
-		
-		//Response response = invocationBuilder.get();
-		
-		Response response = target.request().post(Entity.entity(url, "application/xml"),Response.class);
-		System.out.println(response.toString());
+
+		// System.out.println("Client client1 ");
+
+		WebTarget target = client.target("http://localhost:8080/SG_MICROSERVICE_STORMDETECTOR/gateway/StormDetection")
+				.path("send");
+
+		// System.out.println("dataingestor");
+		System.out.println("in send url    " + url);
+
+		// Response response = target.request().post(Entity.entity(url,
+		// "application/xml"), Response.class);
+		// System.out.println(response.toString());
 		String responsefrom;
-		responsefrom=target.request().post(Entity.entity(url, "application/xml"),String.class);
-		
+		responsefrom = target.request().post(Entity.entity(url, "application/xml"), String.class);
+
 		System.out.println();
 		System.out.println(responsefrom);
 		return url;
-		
-		
+
 	}
 
 	public List<String> convertMinutesSecondsHoursDays(String hours, String minutes, String seconds, String day,
