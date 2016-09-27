@@ -50,7 +50,7 @@ public class JsonCreation {
 		//WebTarget target1 =
 		//client1.target("http://localhost:8080/SG_SC").path("gateway").path("StormDetection").path("send");
 		//WebTarget target1 = client1.target("http://ec2-54-69-92-137.us-west-2.compute.amazonaws.com:65000/forecast_decision").path("json");
-		WebTarget target1 = client1.target("http://ec2-54-69-92-137.us-west-2.compute.amazonaws.com:8080/gateway").path("message").path("saveData");
+		WebTarget target1 = client1.target("http://ec2-54-69-92-137.us-west-2.compute.amazonaws.com:8080/SG_MICROSERVICE_REGISTRY/gateway").path("message").path("saveData");
 		//WebTarget target1 = client1.target("http://localhost:8080/SG_MICROSERVICE_STORMDETECTOR").path("gateway").path("StormDetection").path("sendjson");
 		System.out.println("WebTarget");
 		//// target1.queryParam("name1", "value1");
